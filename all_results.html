@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Всі результати</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .results-table {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .results-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .results-table th,
+    .results-table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="profile.html">Профіль</a>
+    <a href="index.html">Головна сторінка</a>
+  </div>
+
+  <div class="results-table">
+    <h1>Всі результати</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ІД</th>
+          <th>Питання 1</th>
+          <th>Питання 2</th>
+          <th>Питання 3</th>
+        </tr>
+      </thead>
+      <tbody id="results-body"></tbody>
+    </table>
+  </div>
+
+  <script>
+    fetch('/results')
+      .then(response => response.json())
+      .then(data => {
+        const resultsBody = document.getElementById('results-body');
+
+        data.forEach(result => {
+          const row = document.createElement('tr');
+
+          const idCell = document.createElement('td');
+          idCell.textContent = result.id;
+          row.appendChild(idCell);
+
+          const q1Cell = document.createElement('td');
+          q1Cell.textContent = result.q1;
+          row.appendChild(q1Cell);
+
+          const q2Cell = document.createElement('td');
+          q2Cell.textContent = result.q2;
+          row.appendChild(q2Cell);
+
+          const q3Cell = document.createElement('td');
+          q3Cell.textContent = result.q3;
+          row.appendChild(q3Cell);
+
+          resultsBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>

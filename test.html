@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тестування</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .choices label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .choices input[type="radio"] {
+      margin-right: 5px;
+    }
+    input[type="submit"] {
+      margin-top: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="profile.html">Профіль</a>
+    <a href="index.html">Головна сторінка</a>
+  </div>
+
+  <h1>Тестування</h1>
+
+  <form action="result.php" method="post">
+    <div class="question">
+      <p>Питання 1: Що означає HTML?</p>
+      <div class="choices">
+        <label>
+          <input type="radio" name="q1" value="a"> Hyper Text Markup Language
+        </label>
+        <label>
+          <input type="radio" name="q1" value="b"> Home Tool Markup Language
+        </label>
+        <label>
+          <input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language
+        </label>
+        <label>
+          <input type="radio" name="q1" value="d"> Немає правильної відповіді
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>Питання 2: Яким тегом в HTML встановлюється посилання на зовнішній файл CSS?</p>
+      <div class="choices">
+        <label>
+          <input type="radio" name="q2" value="a"> &lt;script&gt;
+        </label>
+        <label>
+          <input type="radio" name="q2" value="b"> &lt;link&gt;
+        </label>
+        <label>
+          <input type="radio" name="q2" value="c"> &lt;style&gt;
+        </label>
+        <label>
+          <input type="radio" name="q2" value="d"> &lt;css&gt;
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>Питання 3: Найкращий університет України:</p>
+      <div class="choices">
+        <label>
+          <input type="radio" name="q3" value="a"> Шевченка
+        </label>
+        <label>
+          <input type="radio" name="q3" value="b"> Харківський медичний
+        </label>
+        <label>
+          <input type="radio" name="q3" value="c"> Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»
+        </label>
+        <label>
+          <input type="radio" name="q3" value="d"> Тернопільський інженерний
+        </label>
+      </div>
+    </div>
+
+    <input type="submit" value="Подати">
+  </form>
+<script src="script.js"></script>
+</body>
+</html>

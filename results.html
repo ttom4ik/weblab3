@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результати</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .result {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .result p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .result button {
+      margin-top: 20px;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="profile.html">Профіль</a>
+    <a href="index.html">Головна сторінка</a>
+  </div>
+
+  <div class="result">
+    <h1>Результати</h1>
+
+    <script>
+      var percentage = localStorage.getItem('percentage');
+      document.write('<p>Ваш результат: ' + percentage + '%</p>');
+    </script>
+
+    <form action="all_results.html" method="get">
+      <button type="submit">Переглянути всі результати</button>
+    </form>
+  </div>
+</body>
+</html>
